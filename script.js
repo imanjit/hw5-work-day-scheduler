@@ -1,4 +1,5 @@
-var timeNow = parseInt(moment().format('HH'));
+var timeNow = parseInt(moment().format("HH"));
+
 var todaysDate = moment().format("[Today is] LLLL");
 $("#currentDay").append(todaysDate);
 
@@ -12,7 +13,7 @@ $(document).ready(function() {
             $(this).removeClass('present')
             $(this).addClass("past");
         }
-        else {
+        else if (timeName > timeNow) {
             $(this).removeClass('past');
             $(this).removeClass('present');
             $(this).addClass("future");
